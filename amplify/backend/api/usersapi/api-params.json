@@ -1,0 +1,42 @@
+{
+    "paths": [
+        {
+            "name": "/users",
+            "lambdaFunction": "usersfunction",
+            "privacy": {
+                "private": true,
+                "auth": [
+                    "/POST",
+                    "/GET",
+                    "/PUT",
+                    "/PATCH",
+                    "/DELETE"
+                ]
+            },
+            "policyResourceName": "/users"
+        }
+    ],
+    "resourceName": "usersapi",
+    "apiName": "usersapi",
+    "functionArns": [
+        {
+            "lambdaFunction": "usersfunction"
+        }
+    ],
+    "privacy": {
+        "auth": 1,
+        "unauth": 0,
+        "authRoleName": "amplify-amplifyapp-dev-95302-authRole",
+        "unAuthRoleName": "amplify-amplifyapp-dev-95302-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "usersfunction",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ]
+}

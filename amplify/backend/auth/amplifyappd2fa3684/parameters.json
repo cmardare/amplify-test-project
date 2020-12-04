@@ -1,8 +1,8 @@
 {
-    "identityPoolName": "amplifytestproject77594bc7_identitypool_77594bc7",
+    "identityPoolName": "amplifyappd2fa3684_identitypool_d2fa3684",
     "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "amplif77594bc7",
-    "userPoolName": "amplifytestproject77594bc7_userpool_77594bc7",
+    "resourceNameTruncated": "amplifd2fa3684",
+    "userPoolName": "amplifyappd2fa3684_userpool_d2fa3684",
     "autoVerifiedAttributes": [
         "email"
     ],
@@ -28,10 +28,10 @@
     "userpoolClientReadAttributes": [
         "email"
     ],
-    "userpoolClientLambdaRole": "amplif77594bc7_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "amplifd2fa3684_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "sharedId": "77594bc7",
-    "resourceName": "amplifytestproject77594bc7",
+    "sharedId": "d2fa3684",
+    "resourceName": "amplifyappd2fa3684",
     "authSelections": "identityPoolAndUserPool",
     "authRoleArn": {
         "Fn::GetAtt": [
@@ -49,12 +49,7 @@
     "usernameAttributes": [
         "email"
     ],
-    "triggers": "{}",
     "userPoolGroupList": [],
     "serviceName": "Cognito",
-    "parentStack": {
-        "Ref": "AWS::StackId"
-    },
-    "permissions": [],
     "dependsOn": []
 }

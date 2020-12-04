@@ -2,6 +2,7 @@ import React from "react"
 import { Route, Switch } from "react-router-dom";
 
 import Home from "../containers/Home";
+import {withAuthenticator} from "@aws-amplify/ui-react";
 
 function Routes(){
     return (
@@ -11,4 +12,4 @@ function Routes(){
     )
 }
 
-export default Routes
+export default withAuthenticator(Routes)
