@@ -15,6 +15,7 @@ function Home() {
     const [email, setEmail] = useState('')
     const [username, setUsername] = useState('')
     const [age, setAge] = useState('')
+    const [users, setUsers] = useState()
 
     function handleNewRow(){
         setNewRow(!newRow)
@@ -22,7 +23,6 @@ function Home() {
 
     function saveRow(e){
         e.preventDefault()
-        e.stopPropagation()
 
         API.post('usersapi', '/users', {
             body: {
@@ -30,7 +30,10 @@ function Home() {
                 username,
                 age
             }
-        }).then((data) => console.log(data))
+        }).then((data) => {
+            setUsers([...users, {email, username, age}])
+            setNewRow(false)
+        })
     }
 
     function onChange(name, value) {
@@ -40,11 +43,12 @@ function Home() {
     }
 
     useEffect(() => {
-        API.get('usersapi', '/users/email/').then((data) => console.log(data))
+        API.get('usersapi', '/users/email/')
+            .then((data) => setUsers(data))
     }, [])
 
     return (
-        <div>
+        <div className="App-header">
             <Container fluid>
                 <Row>
                     <Col>
@@ -60,7 +64,7 @@ function Home() {
                 </Row>
                 <Row>
                     <Col>
-                        <UserTable newRow={newRow} onChange={onChange}/>
+                        <UserTable newRow={newRow} data={users} onChange={onChange}/>
                     </Col>
                 </Row>
                 <Row>

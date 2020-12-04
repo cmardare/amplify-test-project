@@ -18,17 +18,20 @@ function UserTable(props) {
                 </tr>
             </thead>
             <tbody>
-            <tr>
-                <td>Test</td>
-                <td>Test</td>
-                <td>Test</td>
-            </tr>
             {props.newRow &&
-                <tr>
-                    <td><input name="email" onChange={(e) => inputItem(e)}/></td>
-                    <td><input name="username" onChange={(e) => inputItem(e)}/></td>
-                    <td><input name="age" onChange={(e) => inputItem(e)}/></td>
+            <tr>
+                <td><input name="email" onChange={(e) => inputItem(e)}/></td>
+                <td><input name="username" onChange={(e) => inputItem(e)}/></td>
+                <td><input name="age" onChange={(e) => inputItem(e)}/></td>
+            </tr>
+            }
+            {props.data && props.data.map((user, index) => (
+                <tr key={index}>
+                    <td>{user.email}</td>
+                    <td>{user.username}</td>
+                    <td>{user.age}</td>
                 </tr>
+            ))
             }
             </tbody>
         </Table>
